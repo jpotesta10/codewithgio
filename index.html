@@ -2,37 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gio's AI Applications</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+        }
+        .success-message {
+            color: green;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Gio's World of AI Applications</h1>
-    </header>
-    <main>
-        <section id="contact-form">
-            <h2>Describe Your Dream AI Application</h2>
-            <form id="app-request-form">
-                <div class="form-group">
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="description">App Description:</label>
-                    <textarea id="description" name="description" rows="4" required></textarea>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="success-message" hidden>
-                Thank you for your submission! Gio will review your message and reply shortly, usually within 48 hours.
-            </div>
-        </section>
-    </main>
+    <div class="container">
+        <h1>Welcome to Gio's AI Applications</h1>
+        <p>Describe the AI application you want Gio to create:</p>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required><br>
+            <input type="email" id="email" placeholder="Your Email" required><br>
+            <textarea id="description" placeholder="Describe your app" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="success-message" id="successMessage">
+            Your message has been received. Gio will review your message and reply shortly, usually within 48 hours.
+        </div>
+        <button id="testPageButton">Go to Test Page</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

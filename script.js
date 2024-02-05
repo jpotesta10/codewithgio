@@ -1,28 +1,29 @@
-document.getElementById('app-request-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevent the default form submission
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const description = document.getElementById('description').value;
+    // Form data
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        description: document.getElementById('description').value
+    };
 
-    // Simulate sending data to a server
     try {
-        await sendFormData({name, email, description});
-        document.getElementById('success-message').hidden = false;
-        setTimeout(() => {
-            document.getElementById('success-message').hidden = true;
-        }, 5000); // Hide success message after 5 seconds
+        // Simulate an async API call
+        await fetch('https://example.com/api/messages', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+
+        // Show success message
+        document.getElementById('successMessage').style.display = 'block';
     } catch (error) {
-        console.error('Submission failed:', error);
+        console.error('Error:', error);
     }
-
-    // Clear the form
-    document.getElementById('app-request-form').reset();
 });
-
-async function sendFormData(data) {
-    // Placeholder for sending data to a server
-    console.log('Sending form data:', data);
-    // Simulate a network request
-    return new Promise(resolve => setTimeout(resolve, 1000));
-}
+document.getElementById('testPageButton').addEventListener('click', () => {
+    window.open('testPage.html', '_blank');
+});
