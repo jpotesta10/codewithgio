@@ -1,35 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Fun AI Quiz</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        .question-container {
-            margin-bottom: 20px;
-        }
-        .question {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <h1>Fun AI Quiz</h1>
-    <div id="quizContainer">
-        <div class="question-container">
-            <div class="question">What does AI stand for?</div>
-            <button class="answer" data-correct="true">Artificial Intelligence</button>
-            <button class="answer">Automated Instructions</button>
-            <button class="answer">Advanced Interface</button>
-        </div>
-        <!-- Add more questions here -->
-    </div>
-    <button id="submitQuiz">Submit Quiz</button>
-    <div id="result" style="display:none;"></div>
+let score = 0;
+const totalQuestions = 1; // Update this with the total number of questions
 
-    <script src="quiz.js"></script>
-</body>
-</html>
+document.querySelectorAll('.answer').forEach(button => {
+    button.addEventListener('click', function() {
+        const correct = this.dataset.correct === "true";
+        if (correct) score++;
+        this.style.backgroundColor = correct ? "green" : "red";
+        this.disabled = true;
+    });
+});
+
+document.getElementById('submitQuiz').addEventListener('click', () => {
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').textContent = `Your score is ${score} out of ${totalQuestions}.`;
+});
