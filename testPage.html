@@ -2,23 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fun AI Quiz</title>
+    <title>Test Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
         }
-        .question-container {
-            margin-bottom: 20px;
-        }
-        .question {
-            font-weight: bold;
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Fun AI Quiz</h1>
-    <div id="quizContainer">
-        <div class="question-container">
-            <div class="question">What does AI stand for?</div>
-            <button class="answer" data-correct="true">Artificial
+    <h1>This is a Fun Test Page</h1>
+    <p>Explore the functionalities!</p>
+    <button id="voiceGenPageButton">Go to Voice Generator</button>
+
+    <script>
+        document.getElementById('voiceGenPageButton').addEventListener('click', () => {
+            window.open('voiceGenerator.html', '_blank');
+        });
+    </script>
+</body>
+</html>
