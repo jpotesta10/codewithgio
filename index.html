@@ -3,45 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gio's AI World</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        header { background: #333; color: #fff; padding-top: 20px; padding-bottom: 20px; }
-        header h1 { margin: 0; }
-        nav ul { padding: 0; list-style: none; text-align: center; }
-        nav ul li { display: inline; margin: 0 10px; }
-        nav ul li a { color: #fff; text-decoration: none; }
-        .hero { padding: 20px; text-align: center; }
-        .hero h1 { margin-top: 0; }
-        footer { background: #333; color: #fff; text-align: center; padding: 10px 0; }
-    </style>
+    <title>Gio's AI Creations</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Welcome to Gio's AI World</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Gio</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Welcome to Gio's AI Creations</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#request-form">Request Form</a></li>
+            </ul>
+        </nav>
     </header>
-    <section class="hero">
-        <div class="container">
-            <h1>Exploring the Frontiers of AI with Gio</h1>
-            <p>Discover the most interesting AI applications coded by Gio, pushing the boundaries of what's possible.</p>
-        </div>
-    </section>
+    <main>
+        <section id="home">
+            <p>Discover the world's most interesting AI applications, coded by Gio.</p>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <!-- Portfolio items here -->
+        </section>
+        <section id="request-form">
+            <h2>Request an AI Application</h2>
+            <form id="aiRequestForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="description">Describe the AI Application:</label>
+                <textarea id="description" name="description" required></textarea>
+                <button type="submit">Submit Request</button>
+            </form>
+            <div id="successMessage" style="display:none;">
+                <p>Your message has been received! Gio will review your message and reply shortly, usually within 48 hours.</p>
+            </div>
+        </section>
+    </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Gio's AI World. All rights reserved.</p>
-        </div>
+        <p>© Gio's AI Creations</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
